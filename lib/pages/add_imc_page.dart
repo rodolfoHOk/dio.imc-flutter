@@ -50,15 +50,11 @@ class _AddIMCPageState extends State<AddIMCPage> {
             onPressed: () {
               IMC imcObject = IMC(double.parse(weightController.text),
                   double.parse(heightController.text));
-              double imcValue = imcObject.calculate();
-              String imcClassification = imcObject.getClassification(imcValue);
               showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
                     return ResultBottomModal(
-                        pageController: widget.pageController,
-                        imcValue: imcValue,
-                        imcClassification: imcClassification);
+                        pageController: widget.pageController, imc: imcObject);
                   });
             },
             child: const Text("Calcular"),

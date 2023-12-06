@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:imc_flutter/classes/imc.dart';
+import 'package:imc_flutter/factories/imc_repository_factory.dart';
+import 'package:imc_flutter/repositories/imc_repository.dart';
 
 class ResultBottomModal extends StatelessWidget {
-  final double imcValue;
-  final String imcClassification;
+  final IMC imc;
   final PageController pageController;
 
   const ResultBottomModal(
-      {super.key,
-      required this.imcValue,
-      required this.imcClassification,
-      required this.pageController});
+      {super.key, required this.imc, required this.pageController});
 
   @override
   Widget build(BuildContext context) {
+    double imcValue = imc.calculate();
+    String imcClassification = imc.getClassification(imcValue);
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 0),
@@ -28,7 +30,7 @@ class ResultBottomModal extends StatelessWidget {
               children: [
                 const Text("IMC:", style: TextStyle(fontSize: 18)),
                 const SizedBox(width: 8),
-                Text(imcValue.round().toString(),
+                Text(imcValue.toStringAsFixed(2),
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.bold)),
               ],
@@ -62,8 +64,10 @@ class ResultBottomModal extends StatelessWidget {
                   SizedBox(
                       width: 150,
                       child: FilledButton(
-                          onPressed: () {
-                            // persist
+                          onPressed: () async {
+                            IMCRepository imcRepository =
+                                IMCRepositoryFactory.getRepository();
+                            await imcRepository.save(imc);
                             Navigator.pop(context);
                             pageController.jumpToPage(0);
                           },
