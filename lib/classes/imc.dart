@@ -4,6 +4,7 @@ class IMC {
   final String _id = UniqueKey().toString();
   final double _weight;
   final double _height;
+  final DateTime _date = DateTime.now();
 
   IMC(this._weight, this._height);
 
@@ -16,6 +17,8 @@ class IMC {
   double get weight => _weight;
 
   double get height => _height;
+
+  DateTime get date => _date;
 
   String getClassification(double imc) {
     if (imc < 16) {
