@@ -16,7 +16,15 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Aplicativo IMC")),
+        appBar: AppBar(
+            title: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(Icons.health_and_safety_outlined),
+            Text("Aplicativo IMC"),
+            Icon(Icons.health_and_safety_outlined)
+          ],
+        )),
         body: Column(
           children: [
             Expanded(
