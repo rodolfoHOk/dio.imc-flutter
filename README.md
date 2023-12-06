@@ -1,16 +1,38 @@
-# imc_flutter
+# Calculadora IMC Flutter
 
-A new Flutter project.
+> Desafio Aprimorando a sua Calculadora de IMC com Flutter da DIO
 
-## Getting Started
+## Tecnologias
 
-This project is a starting point for a Flutter application.
+- Dart
+- Flutter
 
-A few resources to get you started if this is your first Flutter project:
+### Bibliotecas adicionais
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- google_fonts
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Galeria de Imagens do projeto
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-01.png" alt="IMC Flutter Image 01" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-02.png" alt="IMC Flutter Image 02" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-03.png" alt="IMC Flutter Image 03" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-04.png" alt="IMC Flutter Image 04" width="225"/>
+
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-05.png" alt="IMC Flutter Image 05" width="225"/>
+
+## Rodar
+
+### Requisitos
+
+- Flutter instalado
+- Android Studio
+- Android SDK command line tools
+- Clonar este repositório
+
+### Executar
+
+- Abrir um dispositivo emulado Android
+- Terminal na raiz do projeto: flutter run
