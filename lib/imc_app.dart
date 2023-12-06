@@ -11,10 +11,10 @@ class IMCApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: GoogleFonts.robotoTextTheme(),
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           useMaterial3: true,
           appBarTheme: const AppBarTheme(
-              backgroundColor: Colors.blue, foregroundColor: Colors.white)),
+              backgroundColor: Colors.red, foregroundColor: Colors.white)),
       home: const MainPage(),
     );
   }

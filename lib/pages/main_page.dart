@@ -27,7 +27,12 @@ class _MainPageState extends State<MainPage> {
                 });
               },
               controller: pageController,
-              children: const [HistoryPage(), AddIMCPage()],
+              children: [
+                const HistoryPage(),
+                AddIMCPage(
+                  pageController: pageController,
+                )
+              ],
             )),
             BottomNavigationBar(
                 currentIndex: pagePosition,
