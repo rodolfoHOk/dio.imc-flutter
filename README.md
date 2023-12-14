@@ -30,6 +30,8 @@
 
 <img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-05.png" alt="IMC Flutter Image 05" width="225"/>
 
+<img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-06.png" alt="IMC Flutter Image 06" width="225"/>
+
 ## Rodar
 
 ### Requisitos
