@@ -14,6 +14,10 @@
 - dev: hive_generator
 - dev: build_runner
 
+## Guia
+
+- generate hive model: flutter packages pub run build_runner build
+
 ## Galeria de Imagens do projeto
 
 <img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/IMC-Flutter-01.png" alt="IMC Flutter Image 01" width="225"/>
