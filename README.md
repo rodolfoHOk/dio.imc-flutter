@@ -10,6 +10,9 @@
 ### Bibliotecas adicionais
 
 - google_fonts
+- hive
+- dev: hive_generator
+- dev: build_runner
 
 ## Galeria de Imagens do projeto
 
