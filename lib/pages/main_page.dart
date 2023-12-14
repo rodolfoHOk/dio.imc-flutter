@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imc_flutter/pages/add_imc_page.dart';
+import 'package:imc_flutter/pages/configuration_page.dart';
 import 'package:imc_flutter/pages/history_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -39,7 +40,8 @@ class _MainPageState extends State<MainPage> {
                 const HistoryPage(),
                 AddIMCPage(
                   pageController: pageController,
-                )
+                ),
+                const ConfigurationPage(),
               ],
             )),
             BottomNavigationBar(
@@ -52,7 +54,9 @@ class _MainPageState extends State<MainPage> {
                       icon: Icon(Icons.history), label: "Histórico"),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.health_and_safety),
-                      label: "Adicionar IMC")
+                      label: "Adicionar IMC"),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.build), label: "Configurações")
                 ])
           ],
         ));
