@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imc_flutter/classes/imc.dart';
 import 'package:imc_flutter/factories/imc_repository_factory.dart';
-import 'package:imc_flutter/repositories/imc_repository.dart';
+import 'package:imc_flutter/repositories/imc_mock_repository.dart';
 
 class ResultBottomModal extends StatelessWidget {
   final IMC imc;
@@ -65,7 +65,7 @@ class ResultBottomModal extends StatelessWidget {
                       width: 150,
                       child: FilledButton(
                           onPressed: () async {
-                            IMCRepository imcRepository =
+                            IMCMockRepository imcRepository =
                                 IMCRepositoryFactory.getRepository();
                             await imcRepository.save(imc);
                             Navigator.pop(context);

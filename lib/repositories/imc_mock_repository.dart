@@ -1,6 +1,6 @@
 import 'package:imc_flutter/classes/imc.dart';
 
-class IMCRepository {
+class IMCMockRepository {
   final List<IMC> _imcs = [];
 
   Future<List<IMC>> list() async {

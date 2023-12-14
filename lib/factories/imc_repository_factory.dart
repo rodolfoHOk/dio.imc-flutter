@@ -1,13 +1,13 @@
-import 'package:imc_flutter/repositories/imc_repository.dart';
+import 'package:imc_flutter/repositories/imc_mock_repository.dart';
 
 class IMCRepositoryFactory {
-  static IMCRepository? _imcRepository;
+  static IMCMockRepository? _imcRepository;
 
-  static IMCRepository getRepository() {
+  static IMCMockRepository getRepository() {
     if (_imcRepository != null) {
       return _imcRepository!;
     } else {
-      _imcRepository = IMCRepository();
+      _imcRepository = IMCMockRepository();
       return _imcRepository!;
     }
   }
