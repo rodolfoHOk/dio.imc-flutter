@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imc_flutter/classes/imc.dart';
+import 'package:imc_flutter/model/configuration_model.dart';
+import 'package:imc_flutter/repositories/configuration_repository.dart';
 import 'package:imc_flutter/widgets/result_bottom_modal.dart';
 
 class AddIMCPage extends StatefulWidget {
@@ -14,6 +16,23 @@ class AddIMCPage extends StatefulWidget {
 class _AddIMCPageState extends State<AddIMCPage> {
   TextEditingController weightController = TextEditingController(text: "");
   TextEditingController heightController = TextEditingController(text: "");
+
+  late ConfigurationRepository configurationRepository;
+  ConfigurationModel? configurationModel;
+
+  void initData() async {
+    configurationRepository = await ConfigurationRepository.load();
+    configurationModel = configurationRepository.getData();
+    heightController.text = configurationModel?.height.toString() ?? "";
+    debugPrint(configurationModel?.height.toString());
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +56,23 @@ class _AddIMCPageState extends State<AddIMCPage> {
             keyboardType: TextInputType.number,
           ),
           const SizedBox(height: 16),
-          const Text(
-            "Altura",
-            style: TextStyle(fontWeight: FontWeight.bold),
+          const Row(
+            children: [
+              Text(
+                "Altura",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(width: 16),
+              Text(
+                "(para mudar somente em configurações)",
+                style: TextStyle(fontSize: 12),
+              ),
+            ],
           ),
           TextField(
             controller: heightController,
             keyboardType: TextInputType.number,
+            readOnly: true,
           ),
           const SizedBox(height: 24),
           FilledButton(
