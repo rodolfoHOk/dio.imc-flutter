@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:imc_flutter/classes/imc.dart';
-import 'package:imc_flutter/factories/imc_repository_factory.dart';
-import 'package:imc_flutter/repositories/imc_mock_repository.dart';
+import 'package:imc_flutter/repositories/imc_hive_repository.dart';
 
-class ResultBottomModal extends StatelessWidget {
+class ResultBottomModal extends StatefulWidget {
   final IMC imc;
   final PageController pageController;
 
@@ -11,9 +10,26 @@ class ResultBottomModal extends StatelessWidget {
       {super.key, required this.imc, required this.pageController});
 
   @override
+  State<ResultBottomModal> createState() => _ResultBottomModalState();
+}
+
+class _ResultBottomModalState extends State<ResultBottomModal> {
+  late IMCHiveRepository imcHiveRepository;
+
+  void initData() async {
+    imcHiveRepository = await IMCHiveRepository.load();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initData();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    double imcValue = imc.calculate();
-    String imcClassification = imc.getClassification(imcValue);
+    double imcValue = widget.imc.calculate();
+    String imcClassification = widget.imc.getClassification(imcValue);
 
     return Center(
       child: Padding(
@@ -64,12 +80,10 @@ class ResultBottomModal extends StatelessWidget {
                   SizedBox(
                       width: 150,
                       child: FilledButton(
-                          onPressed: () async {
-                            IMCMockRepository imcRepository =
-                                IMCRepositoryFactory.getRepository();
-                            await imcRepository.save(imc);
+                          onPressed: () {
+                            imcHiveRepository.add(widget.imc);
                             Navigator.pop(context);
-                            pageController.jumpToPage(0);
+                            widget.pageController.jumpToPage(0);
                           },
                           child: const Text("Salvar"))),
                 ],
