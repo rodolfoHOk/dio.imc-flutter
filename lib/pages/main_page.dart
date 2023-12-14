@@ -41,7 +41,9 @@ class _MainPageState extends State<MainPage> {
                 AddIMCPage(
                   pageController: pageController,
                 ),
-                const ConfigurationPage(),
+                ConfigurationPage(
+                  pageController: pageController,
+                ),
               ],
             )),
             BottomNavigationBar(
