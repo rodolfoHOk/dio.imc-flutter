@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
+part 'imc.g.dart';
+
+@HiveType(typeId: 1)
 class IMC {
+  @HiveField(0)
   final String _id = UniqueKey().toString();
+
+  @HiveField(1)
   final double _weight;
+
+  @HiveField(2)
   final double _height;
+
+  @HiveField(3)
   final DateTime _date = DateTime.now();
 
   IMC(this._weight, this._height);
