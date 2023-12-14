@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 part 'imc.g.dart';
 
 @HiveType(typeId: 1)
-class IMC {
+class IMC extends HiveObject {
   @HiveField(0)
   final String _id = UniqueKey().toString();
 
